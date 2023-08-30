@@ -1,0 +1,23 @@
+package Abstraction;
+
+public class Salary extends Employee {
+
+	double salary;
+	
+	Salary (String name, String address, int number, double salary)
+	{
+		super(name, address, number);
+		this.salary = salary;
+	}
+	public void setSalary (Double salary)
+	{
+		if (salary >= 0.0)
+		{
+			this.salary = salary;
+		}
+	}
+	public double getSalary()
+	{
+		return this.salary;
+	}
+}

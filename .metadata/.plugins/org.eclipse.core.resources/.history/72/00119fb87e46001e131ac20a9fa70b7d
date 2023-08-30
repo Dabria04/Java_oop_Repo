@@ -1,0 +1,86 @@
+package SwingDesigner;
+
+import java.awt.EventQueue;
+
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.border.EmptyBorder;
+import java.awt.Toolkit;
+import java.awt.Font;
+import java.awt.Color;
+import javax.swing.JLabel;
+import javax.swing.JTextField;
+import javax.swing.JButton;
+import javax.swing.JPasswordField;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+
+public class LoginForm extends JFrame {
+
+	private JPanel contentPane;
+	private JTextField txtusername;
+	private JPasswordField txtpassword;
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					LoginForm frame = new LoginForm();
+					frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the frame.
+	 */
+	public LoginForm() {
+		setTitle("Login Page");
+		setForeground(new Color(0, 0, 0));
+		setFont(new Font("Tahoma", Font.PLAIN, 11));
+		setIconImage(Toolkit.getDefaultToolkit().getImage("C:\\Users\\Ingyin\\OneDrive\\Pictures\\Saved Pictures\\photo_2023-05-08_21-46-24.jpg"));
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setBounds(100, 100, 753, 415);
+		contentPane = new JPanel();
+		contentPane.setBackground(new Color(0, 255, 255));
+		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+
+		setContentPane(contentPane);
+		contentPane.setLayout(null);
+		
+		JLabel lblusername = new JLabel("User Name");
+		lblusername.setBounds(176, 117, 93, 22);
+		contentPane.add(lblusername);
+		
+		JLabel lblpassword = new JLabel("Passowrd");
+		lblpassword.setBounds(176, 184, 60, 13);
+		contentPane.add(lblpassword);
+		
+		txtusername = new JTextField();
+		txtusername.setBounds(352, 119, 96, 19);
+		contentPane.add(txtusername);
+		txtusername.setColumns(10);
+		
+		JButton btnlogin = new JButton("Login");
+		btnlogin.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			}
+		});
+		btnlogin.setBounds(184, 286, 85, 21);
+		contentPane.add(btnlogin);
+		
+		JButton btncancel = new JButton("Cancel");
+		btncancel.setBounds(348, 286, 85, 21);
+		contentPane.add(btncancel);
+		
+		txtpassword = new JPasswordField();
+		txtpassword.setBounds(352, 181, 96, 19);
+		contentPane.add(txtpassword);
+	}
+}
